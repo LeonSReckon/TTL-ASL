@@ -1,11 +1,11 @@
-// Fantastic 4 2005 Autosplitter Version 1.0.0 19/8/2022
+// 25 To Life Autosplitter Version 2.0.0 19/8/2022
 // Supports IGT
 // Supports all difficulties
 // Pointers and Script <by> ||LeonSReckon||
 
 state("TTL")
 {
-	float IGT: 0x6536C4, 0x4, 0x44, 0x54, 0x18, 0x28, 0x14, 0x30;
+	float IGT: 0x4F63A0, 0x1F8, 0x10, 0x0, 0x10, 0x8, 0x14, 0x30;
 	float boss: 0xAC0C4C, 0xC, 0x24, 0x1C, 0x1C, 0x4, 0x4, 0x7B8;
 	int lvl: 0x5128B4, 0x4, 0x0, 0x0, 0x2E8;
 	int flvl: 0x2389AC, 0x4;
@@ -41,11 +41,11 @@ isLoading
 gameTime
 {
 	if(current.IGT > old.IGT){
-		return TimeSpan.FromSeconds(Math.Floor(vars.totalGameTime + current.IGT));
+		return TimeSpan.FromSeconds(vars.totalGameTime + current.IGT);
 	}
 	if(current.IGT == 0 && old.IGT > 0){
-			vars.totalGameTime = System.Math.Floor(vars.totalGameTime + old.IGT);
-			return TimeSpan.FromSeconds(System.Math.Floor(vars.totalGameTime + current.IGT));
+			vars.totalGameTime = (vars.totalGameTime + old.IGT);
+			return TimeSpan.FromSeconds(vars.totalGameTime + current.IGT);
 		}
 }
 
